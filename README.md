@@ -1,4 +1,4 @@
-#Actividad #10  – Práctica .NET: Crear solución multi-proyecto
+# Actividad #10  – Práctica .NET: Crear solución multi-proyecto
 
 ## Datos académicos
 - **Institución**: Tecnológico de Software
@@ -7,3 +7,14 @@
 - **Actividad 10**
 - **Estudiante:** Giovana Ruby Díaz Anduze
 - *Finalizado el 22 de mayo de 2026*
+
+---
+
+## CatalogoApp: GAMEVAULT
+
+Una actualización de la actividad realizada en la semana 1 de un catálogo de videojuegos: GAMEVAULT, la cual ahora implementamos los conceptos vistos en la materia siguiendo una arquitectura en capas basada en principios de separación de responsabilidades.
+
+El proyecto permite la administración de un catálogo de elementos mediante una estructura organizada en **Domain**, **Application**, **Infrastructure** y **Presentation**.
+
+---
+
