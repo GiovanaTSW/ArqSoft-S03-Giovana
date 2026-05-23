@@ -41,18 +41,7 @@ CatalogoApp
 
 ---
 
-
-## ✨ Funcionalidades
-
-- Gestión de elementos del catálogo
-- Organización modular del código
-- Separación de responsabilidades
-- Estructura escalable y mantenible
-- Implementación de servicios y entidades
-
----
-
-## Cómo ejecutar el proyecto
+## ¿Cómo ejecutar el proyecto?
 
 1. Clonar el repositorio:
 
