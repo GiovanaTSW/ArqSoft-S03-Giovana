@@ -74,3 +74,35 @@ dotnet run --project Catalogo.Presentation
 ```
 
 ---
+
+## Capturas de pantalla
+
+### Pantalla de inicio
+
+<img width="2560" height="1600" alt="1" src="https://github.com/user-attachments/assets/33cb3166-17fe-4182-9742-b2c53a8b2afc" />
+
+<img width="2560" height="1600" alt="2" src="https://github.com/user-attachments/assets/e04cfe3f-23ed-4d83-90bc-0cc27a757849" />
+
+### Catálogo de Videojuegos
+
+<img width="2542" height="1338" alt="3" src="https://github.com/user-attachments/assets/080b592e-27a3-4c30-b4f5-e8d887e22650" />
+
+### Agregar videojuego
+
+<img width="2548" height="1338" alt="4" src="https://github.com/user-attachments/assets/0dc83f7e-dd48-4934-a37d-7ccab76776fc" />
+
+### Reseñas con usuarios creados
+
+<img width="2534" height="1328" alt="5" src="https://github.com/user-attachments/assets/0600e041-05a2-4e69-86ba-f3076724265e" />
+
+<img width="2544" height="1342" alt="6" src="https://github.com/user-attachments/assets/1d02f939-6b8c-4f17-bd5c-8202e4c3103e" />
+
+### Inicio de sesión
+
+<img width="2550" height="1342" alt="7" src="https://github.com/user-attachments/assets/8885b1bf-358f-4545-9909-dc747dbbb5bf" />
+
+---
+
+## Cláusula de IA
+
+Yo, Giovana Ruby Díaz Anduze, aclaro que utilicé la inteligencia artificial **Claude** para correcciones de bugs y ayuda en el diseño de la página.
