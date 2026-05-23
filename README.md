@@ -41,3 +41,47 @@ CatalogoApp
 
 ---
 
+
+## ✨ Funcionalidades
+
+- Gestión de elementos del catálogo
+- Organización modular del código
+- Separación de responsabilidades
+- Estructura escalable y mantenible
+- Implementación de servicios y entidades
+
+---
+
+## Cómo ejecutar el proyecto
+
+1. Clonar el repositorio:
+
+```bash
+git clone <URL_DEL_REPOSITORIO>
+```
+
+2. Entrar a la carpeta del proyecto:
+
+```bash
+cd CatalogoApp
+```
+
+3. Restaurar dependencias:
+
+```bash
+dotnet restore
+```
+
+4. Compilar el proyecto:
+
+```bash
+dotnet build
+```
+
+5. Ejecutar la aplicación:
+
+```bash
+dotnet run --project Catalogo.Presentation
+```
+
+---
