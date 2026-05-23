@@ -26,7 +26,7 @@ namespace CatalogoApp.Infrastructure.Repositories
                 return new List<Item>();
 
             var json = File.ReadAllText(_filePath);
-            return JsonSerializer.Deserialize<List<Item>>(json)
+            return JsonSerializer.Deserialize<List<Item>>(json) ?? new List<Item>();
                    ?? new List<Item>();
         }
 
@@ -40,7 +40,7 @@ namespace CatalogoApp.Infrastructure.Repositories
         public void Agregar(Item item)
         {
             var items = ObtenerTodos();
-
+            item.Id = items.Count > 0 ? items.Max(i => i.Id) + 1 : 1;
             // Auto-incrementar el Id
             item.Id = items.Count > 0
                       ? items.Max(i => i.Id) + 1
@@ -65,8 +65,8 @@ namespace CatalogoApp.Infrastructure.Repositories
         // Método privado: serializa y escribe el archivo
         private void Guardar(List<Item> items)
         {
-            var opciones = new JsonSerializerOptions
-            {
+            var opciones = new JsonSerializerOptions { WriteIndented = true };
+            File.WriteAllText(_filePath, JsonSerializer.Serialize(items, opciones));
                 WriteIndented = true   // JSON legible para humanos
             };
             var json = JsonSerializer.Serialize(items, opciones);
