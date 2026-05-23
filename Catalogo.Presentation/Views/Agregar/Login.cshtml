@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Iniciar Sesión";
+}
+
+<div class="gv-auth-wrap">
+    <div class="gv-auth-box">
+        <div class="gv-auth-logo">◈ GAMEVAULT</div>
+        <div class="gv-page-label" style="text-align:center; margin-bottom:4px;">Acceso</div>
+        <h2 class="gv-auth-title">Iniciar <span class="gv-cyan">Sesión</span></h2>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="gv-alert-error">@ViewBag.Error</div>
+        }
+
+        <form method="post" asp-action="Login">
+            <div class="gv-form-group">
+                <label class="gv-label">Correo electrónico</label>
+                <input type="email" name="email" class="gv-input form-control"
+                       placeholder="tu@correo.com" required />
+            </div>
+            <div class="gv-form-group">
+                <label class="gv-label">Contraseña</label>
+                <input type="password" name="password" class="gv-input form-control"
+                       placeholder="••••••••" required />
+            </div>
+            <button type="submit" class="gv-btn-primary gv-btn-full" style="margin-top:0.5rem;">
+                Entrar →
+            </button>
+        </form>
+
+        <p class="gv-auth-switch">
+            ¿No tienes cuenta? <a asp-action="Registro">Regístrate aquí</a>
+        </p>
+    </div>
+</div>

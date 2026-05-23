@@ -1,8 +1,39 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="gv-hero">
+    <div class="gv-page-label" style="justify-content:center; display:flex;">Bienvenido a</div>
+    <div class="gv-hero-title">
+        <span class="gv-cyan">Game</span>Vault
+    </div>
+    <p class="gv-hero-sub">Tu colección personal de videojuegos y reseñas</p>
+
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a asp-controller="Catalogo" asp-action="Index" class="gv-btn-primary"
+           style="padding:0.65rem 2rem; font-size:0.9rem;">
+            Ver catálogo →
+        </a>
+        <a asp-controller="Catalogo" asp-action="Agregar"
+           style="padding:0.65rem 1.5rem; font-size:0.9rem; display:inline-block; border:1px solid var(--gv-border2); border-radius:3px; font-family:var(--gv-font-head); text-transform:uppercase; letter-spacing:0.1em; color:var(--gv-muted); font-weight:700; transition:all 0.2s;">
+            + Agregar juego
+        </a>
+    </div>
+
+    <div class="gv-separator" style="max-width:400px; margin: 2.5rem auto;">GAMEVAULT</div>
+
+    <div style="display:flex; justify-content:center; gap:3rem; flex-wrap:wrap;">
+        <div class="gv-stat">
+            <span class="gv-stat-num">∞</span>
+            <div class="gv-stat-lbl">Juegos guardados</div>
+        </div>
+        <div class="gv-stat">
+            <span class="gv-stat-num">◈</span>
+            <div class="gv-stat-lbl">Tu colección</div>
+        </div>
+        <div class="gv-stat">
+            <span class="gv-stat-num">★</span>
+            <div class="gv-stat-lbl">Tus reseñas</div>
+        </div>
+    </div>
 </div>

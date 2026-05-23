@@ -1,38 +1,57 @@
 ﻿@model CatalogoApp.Domain.Models.Item
 
-<h1>Agregar videojuego</h1>
+@{
+    ViewData["Title"] = "Agregar juego";
+}
 
-<form asp-action="Agregar" method="post">
-    @* Centrado vertical con Flexbox *@
-    <div style="display: flex; align-items: center; margin-bottom: 15px;">
-        <label style="width: 120px;">Título</label>
-        <input asp-for="Titulo" class="form-control" style="flex: 1;" />
-    </div>
+<a asp-action="Index" class="gv-back">← Cancelar</a>
 
-    <div style="display: flex; align-items: center; margin-bottom: 15px;">
-        <label style="width: 120px;">Género</label>
-        <input asp-for="Genero" class="form-control" style="flex: 1;" />
-    </div>
+<div style="margin-top:1.5rem;">
+    <div class="gv-page-label">Nueva entrada</div>
+    <h1>Agregar <span class="gv-cyan">Videojuego</span></h1>
 
-    <div style="display: flex; align-items: center; margin-bottom: 15px;">
-        <label style="width: 120px;">Consola</label>
-        <input asp-for="Consola" class="form-control" style="flex: 1;" />
-    </div>
+    <form asp-action="Agregar" method="post" class="gv-form-wrap">
+        <div class="gv-form-group">
+            <label asp-for="Titulo" class="gv-label">Título</label>
+            <input asp-for="Titulo" class="form-control" placeholder="Ej. The Legend of Zelda: BOTW" />
+            <span asp-validation-for="Titulo" class="gv-red" style="font-size:0.78rem;"></span>
+        </div>
 
-    <div style="display: flex; align-items: center; margin-bottom: 15px;">
-        <label style="width: 120px;">Año</label>
-        <input asp-for="Ano" type="number" class="form-control" style="flex: 1;" />
-    </div>
+        <div class="gv-form-group">
+            <label asp-for="Genero" class="gv-label">Género</label>
+            <input asp-for="Genero" class="form-control" placeholder="Ej. RPG, Acción, Aventura..." />
+        </div>
 
-    <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-        <label style="width: 120px; margin-top: 8px;">Descripción</label>
-        <textarea asp-for="Descripcion" class="form-control" style="flex: 1;"></textarea>
-    </div>
+        <div class="gv-form-group">
+            <label asp-for="Consola" class="gv-label">Consola / Plataforma</label>
+            <input asp-for="Consola" class="form-control" placeholder="Ej. Nintendo Switch, PS5, PC..." />
+        </div>
 
-    <div style="margin-left: 120px;">
-        <button type="submit" class="btn btn-primary">Guardar</button>
-    </div>
-</form>
+        <div class="gv-form-group">
+            <label asp-for="Ano" class="gv-label">Año de lanzamiento</label>
+            <input asp-for="Ano" type="number" class="form-control" placeholder="@DateTime.Now.Year" />
+        </div>
 
-<hr />
-<a asp-action="Index">&larr; Cancelar</a>
+        <div class="gv-form-group">
+            <label asp-for="Descripcion" class="gv-label">Descripción / Reseña</label>
+            <textarea asp-for="Descripcion" class="form-control" rows="4"
+                      placeholder="Tu opinión, sinopsis o notas sobre el juego..."></textarea>
+        </div>
+
+        <div style="margin-top:1.5rem; display:flex; gap:0.75rem;">
+            <button type="submit" class="gv-btn-primary" style="padding:0.55rem 1.6rem;">
+                Guardar →
+            </button>
+            <a asp-action="Index" class="gv-btn-secondary"
+               style="padding:0.55rem 1.2rem; display:inline-block;">
+                Cancelar
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

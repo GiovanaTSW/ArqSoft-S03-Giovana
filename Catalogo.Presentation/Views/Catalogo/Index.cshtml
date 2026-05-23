@@ -1,29 +1,57 @@
 ﻿@model List<CatalogoApp.Domain.Models.Item>
 
-<h1>Catálogo de Videojuegos</h1>
+@{
+    ViewData["Title"] = "Catálogo";
+}
 
-<!-- Filtro por Genero -->
-<div>
-    <a asp-action="Index">Todos</a>
+<div class="gv-page-label">Colección</div>
+<h1>Catálogo de <span class="gv-cyan">Videojuegos</span></h1>
+
+<div class="gv-filter-bar">
+    <a asp-action="Index" class="gv-filter-link @(ViewBag.GeneroActual == null ? "active" : "")">
+        Todos
+    </a>
     @foreach (var gen in ViewBag.Generos as List<string>)
     {
-        <span> | </span>
-        <a asp-action="Index" asp-route-genero="@gen">@gen</a>
+        <a asp-action="Index" asp-route-genero="@gen"
+           class="gv-filter-link @(ViewBag.GeneroActual == gen ? "active" : "")">
+            @gen
+        </a>
     }
 </div>
 
-<hr />
+@if (!Model.Any())
+{
+    <div class="gv-card" style="text-align:center; padding: 3rem; color: var(--gv-muted);">
+        <div style="font-size:2.5rem; margin-bottom:0.75rem;">◈</div>
+        <p style="font-family: var(--gv-font-head); letter-spacing:0.1em; text-transform:uppercase; font-size:0.85rem;">
+            No hay juegos en esta categoría
+        </p>
+        <a asp-action="Agregar" class="gv-btn-primary" style="margin-top:1rem; display:inline-block; padding:0.45rem 1.2rem;">
+            + Agregar el primero
+        </a>
+    </div>
+}
+else
+{
+    <ul class="gv-game-grid">
+        @foreach (var item in Model)
+        {
+            <li class="gv-game-item">
+                <div class="gv-game-title">
+                    <a asp-action="Detalle" asp-route-id="@item.Id">@item.Titulo</a>
+                </div>
+                <div style="display:flex; gap:0.4rem; flex-wrap:wrap; margin: 0.2rem 0;">
+                    <span class="gv-badge">@item.Genero</span>
+                    <span class="gv-badge gv-badge-console">@item.Consola</span>
+                </div>
+                <div class="gv-game-meta">@item.Ano</div>
+            </li>
+        }
+    </ul>
+}
 
-<!-- Lista de Items -->
-<ul>
-    @foreach (var item in Model)
-    {
-        <li>
-            <a asp-action="Detalle" asp-route-id="@item.Id">@item.Titulo</a>
-            &mdash; @item.Genero &diams; @item.Ano
-        </li>
-    }
-</ul>
-
 <hr />
-<a asp-action="Agregar">+ Agregar videojuego</a>
+<a asp-action="Agregar" class="gv-btn-primary" style="display:inline-block; padding:0.45rem 1.4rem;">
+    + Agregar videojuego
+</a>
